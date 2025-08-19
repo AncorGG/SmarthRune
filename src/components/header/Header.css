@@ -11,6 +11,7 @@
   justify-content: start;
 
   background-image: url("images/header.jpg");
+  background-color: var(--color-primary);
   border-radius: 0 0 35px 35px;
 
   background-size: cover;
