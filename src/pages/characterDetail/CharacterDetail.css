@@ -326,7 +326,7 @@
   color: #cecece;
 }
 
-.modal-info-header{
+.modal-info-header {
   font-size: 24px;
   font-weight: 400;
   color: var(--color-secondary) !important;
@@ -335,7 +335,7 @@
   text-decoration: underline;
 }
 
-.modal-info-text{
+.modal-info-text {
   color: var(--text-color) !important;
 }
 
@@ -401,4 +401,15 @@
 .modal-buttons .confirm-button {
   background-color: var(--color-secondary);
   color: #fff;
+}
+
+.modal-info-text-convert {
+  color: var(--text-color) !important;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.larger-input-font .ant-input-number-input {
+  font-size: 22px;
+  text-align: center;
 }
