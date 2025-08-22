@@ -2,7 +2,6 @@ import { InputNumber, Progress, Select } from "antd";
 import Footer from "../../components/footer/Footer";
 import './CharacterDetail.css';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { MdAttachMoney } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 import { FiSun, FiEdit3 } from "react-icons/fi";
 import { GoDot, GoDotFill } from "react-icons/go";
@@ -11,6 +10,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { TbArrowsExchange } from "react-icons/tb";
+import HeaderButtons from "../../components/header/HeaderButtons";
 
 const { Option } = Select;
 
@@ -25,12 +25,6 @@ function CharacterDetail() {
   const [fromValue, setFromValue] = useState(1);
   const [fromCurrency, setFromCurrency] = useState("BROAM");
   const [toCurrency, setToCurrency] = useState("CHIP");
-  const navigate = useNavigate();
-
-  const goto = (url) => {
-    navigate(url);
-  };
-
 
   const handleInventoryTrack = (value) => {
     setInventoryTrack(inventoryTrack + value);
@@ -128,14 +122,29 @@ function CharacterDetail() {
     BROAM: {
       CHIP: 150,
       RUCK: 150 * 100,
+      FROST: 150 * 2,
+      FRAG: 150 / 6.5,
     },
     CHIP: {
       BROAM: 1 / 150,
       RUCK: 100,
+      FROST: 2,
+      FRAG: 1 / 6.5,
     },
     RUCK: {
       BROAM: 1 / (150 * 100),
       CHIP: 1 / 100,
+      FROST: 1 / 200,
+    },
+    FROST: {
+      CHIP: 1 / 2,
+      BROAM: 1 / (150 * 2),
+      RUCK: 50,
+    },
+    FRAG: {
+      CHIP: 6.5,
+      BROAM: 1 / (150 * 6.5),
+      RUCK: 6.5 * 100,
     },
   };
 
@@ -145,7 +154,7 @@ function CharacterDetail() {
     }
     const rate = CONVERSION_RATES[fromCurrency]?.[toCurrency];
     if (rate) {
-      return fromValue * rate.toFixed(2);
+      return (fromValue * rate).toFixed(2);
     }
     return 0;
   }
@@ -211,11 +220,7 @@ function CharacterDetail() {
     <div className="character-detail">
       <div className="main-content">
 
-        {/* Header Buttons */}
-        <div className="c-header">
-          <div className="c-back-button" onClick={() => goto("/")}><IoIosArrowBack size={30} /></div>
-          <div className="c-bizzum"><MdAttachMoney size={30} /></div>
-        </div>
+        <HeaderButtons/>
 
         {/* Character Info */}
         <div className="c-image">
@@ -249,7 +254,6 @@ function CharacterDetail() {
                 '0%': '#f63c3c',
                 '50%': '#ff5e9e',
               }}
-              size={[300, 20]}
               trailColor="#e7e7e7"
             />
           </div>
@@ -314,12 +318,12 @@ function CharacterDetail() {
               <div className="c-i-currency">
                 <div className="c-i-currency-vinter">
                   <div className="c-i-currency-samll">
-                    <h3>Frags</h3>
+                    <h3>Frost</h3>
                     <p>21</p>
                   </div>
                   <vl className="c-vl" />
                   <div className="c-i-currency-samll">
-                    <h3>Frost</h3>
+                    <h3>Frags</h3>
                     <p>46</p>
                   </div>
                 </div>

@@ -1,16 +1,31 @@
-.character-list-wrapper {
+.character-list-outer-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 20px;
   flex-grow: 1;
-  height: auto;
-  height: 44vh;
-  box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 50px;
   overflow: hidden;
+  height: calc(100vh - 100px /*Header*/ - 200px /*Session*/ - 100px /*Footer*/);
+}
+
+.character-shadow-container {
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 50px 50px 0 0;
+  margin: 0;
+}
+
+.character-list-wrapper {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50px;
 }
 
 .character-list-container {
   height: 100%;
+  width: 100%;
   overflow-y: scroll;
-
   display: flex;
   flex-direction: column;
   align-items: center;

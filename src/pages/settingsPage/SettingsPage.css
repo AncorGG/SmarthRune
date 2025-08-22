@@ -1,0 +1,25 @@
+.set-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-content {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.set-logout {
+    width: 60%;
+    background-color: var(--color-secondary);
+    text-align: center;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 24px;
+}

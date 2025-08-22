@@ -1,0 +1,21 @@
+.c-header {
+  margin-top: 20px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-back-button,
+.c-bizzum {
+  cursor: pointer;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-secondary);
+  padding: 5px;
+  border-radius: 50%;
+}
